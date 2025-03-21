@@ -9,7 +9,8 @@ import joblib
 # Load model outside the route to ensure it's loaded once
 model = joblib.load("summative/linear_regression/best_model.joblib")
 
-
+# Optionally load the scaler (if needed for feature scaling)
+# scaler = joblib.load("scaler.joblib")  # Uncomment if your model was trained with scaling
 
 # Create an app instance 
 app = FastAPI()
@@ -60,19 +61,23 @@ async def make_prediction(wineq_request: WineQRequest):
             wineq_request.colour
         ]]
         
+        # Optional: If the model was trained with scaling, scale the input data
+        # scaled_input = scaler.transform(single_row)  # Apply scaling if needed
+        # new_value = model.predict(scaled_input)  # Make prediction with scaled input
+
         # Predict the output using the loaded model
         new_value = model.predict(single_row)
-        
-        # Convert the predicted value to an integer (if needed)
-        integer_quality = int(new_value[0])  # assuming the output should be an integer
-        
+
+        # Round the predicted value to get a valid wine quality integer (if needed)
+        predicted_quality = round(new_value[0])
+
         # Return the prediction
-        return {"predicted Quality": integer_quality}
+        return {"predicted Quality": predicted_quality}
     
     except Exception as e:
         # Return a detailed error message in case of failure
         raise HTTPException(status_code=500, detail=f"Something went wrong: {str(e)}")
 
- # To run the app (run this in the terminal)
+# To run the app (run this in the terminal)
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
