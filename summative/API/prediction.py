@@ -8,7 +8,6 @@ import pandas as pd
 
 # --- 1. Load the Trained Model ---
 model = joblib.load("summative/linear_regression/best_model.joblib")
-model = joblib.load(model)
 print(f"Successfully loaded model from: {model}")
 
 # --- 2. Define the Input Data Structure using Pydantic ---
