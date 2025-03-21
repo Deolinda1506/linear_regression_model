@@ -1,3 +1,4 @@
+annotated-types==0.7.0
 anyio==4.7.0
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
@@ -11,6 +12,7 @@ bleach==6.2.0
 certifi==2024.8.30
 cffi==1.17.1
 charset-normalizer==3.4.0
+click==8.1.8
 colorama==0.4.6
 comm==0.2.2
 contourpy==1.3.1
@@ -19,6 +21,7 @@ debugpy==1.8.9
 decorator==5.1.1
 defusedxml==0.7.1
 executing==2.1.0
+fastapi==0.115.11
 fastjsonschema==2.21.1
 filelock==3.13.1
 fonttools==4.55.3
@@ -80,6 +83,8 @@ psutil==6.1.0
 ptyprocess==0.7.0
 pure_eval==0.2.3
 pycparser==2.22
+pydantic==2.10.6
+pydantic_core==2.27.2
 Pygments==2.18.0
 pyparsing==3.2.0
 python-dateutil==2.9.0.post0
@@ -102,6 +107,7 @@ smmap==5.0.1
 sniffio==1.3.1
 soupsieve==2.6
 stack-data==0.6.3
+starlette==0.46.1
 sympy==1.13.1
 tenacity==9.0.0
 terminado==0.18.1
@@ -115,6 +121,7 @@ typing_extensions==4.12.2
 tzdata==2024.2
 uri-template==1.3.0
 urllib3==2.2.3
+uvicorn==0.34.0
 wcwidth==0.2.13
 webcolors==24.11.1
 webencodings==0.5.1
