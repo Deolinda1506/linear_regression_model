@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import joblib
 
 # Load model outside the route to ensure it's loaded once
-model = joblib.load("../linear_regression/best_model.joblib")
+model = joblib.load("../../linear_regression/best_model.joblib")
 
 # Create an app instance 
 app = FastAPI()
